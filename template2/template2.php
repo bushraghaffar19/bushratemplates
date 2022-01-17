@@ -1,8 +1,9 @@
 <?php
 include_once 'config.php';
 session_start();
-$firstname="Urooj";
-$lastname="Fatima";
+$firstname="Bushra";
+$lastname="Ghaffar";
+$_SESSION['color']="#02055A";
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,35 +26,21 @@ $lastname="Fatima";
      $data = mysqli_fetch_array($sql);
 ?>
 
-<body>
+<body style="--profile-theme: <?php echo($_SESSION['color'])?>;">
   <nav class="navbar navbar-expand-lg navbar-light ">
-          <a class="navbar-brand" href="#"><img class="image" src="images/logo_transparent.png" alt="logo"></a>
+          <a class="navbar-brand" href="#"><img class="image" src="../../images/logo_transparent.png" alt="logo"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
               aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
-              <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav mr-auto">
               </ul>
               <span class="navbar-text">
                   <ul class="navbar-nav mr-auto">
                       <li class="nav-item active">
-                          <a class="nav-link" href="#">Home
+                          <a class="nav-link" href="../../index.html">Home
               </span></a>
-              </li>
-              <li class="nav-item active">
-                  <a class="nav-link" href="#">About</span></a>
-              </li>
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Templates
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="#">Template 1</a>
-                      <a class="dropdown-item" href="#">Template 2</a>
-                      <a class="dropdown-item" href="#">Template 3 </a>
-                  </div>
               </li>
               </ul>
               </span>
@@ -67,8 +54,8 @@ $lastname="Fatima";
             <div class="intro">
               <div class="profile">
                 <div class="photo">
-                  <img src="<?php echo($data['picture']);?>">
-                </div>
+                      <img src="../../cvbuilder/images/<?php echo($data['picture']);?>">
+                 </div>
                 <div class="bio">
                   <h1 class="name"><?php echo($data['first_name']);
                   echo(" ");
@@ -131,12 +118,12 @@ $lastname="Fatima";
                   </div>
                   <span>Education</span>
                 </div>
-                <?php
-                                  while ($rows = mysqli_fetch_array($result3, MYSQLI_ASSOC))
-                                  {$query2="SELECT * FROM `user_education_details` WHERE `school_id`='$rows[school_id]'";
-                                      $run = mysqli_query($conn, $query2);
-                                      $row = mysqli_fetch_array($run, MYSQLI_ASSOC);?>
                 <div class="detail-content">
+                  <?php
+                                    while ($rows = mysqli_fetch_array($result3, MYSQLI_ASSOC))
+                                    {$query2="SELECT * FROM `user_education_details` WHERE `school_id`='$rows[school_id]'";
+                                        $run = mysqli_query($conn, $query2);
+                                        $row = mysqli_fetch_array($run, MYSQLI_ASSOC);?>
                   <div class="timeline-block">
                     <h6><?php echo($row['name']);?><span>&nbsp(<?php $start=$row['start'];
                                                                                            $startdate = explode("-", $start);
@@ -169,12 +156,12 @@ $lastname="Fatima";
                   </div>
                   <span>Experience</span>
                 </div>
-                <?php
-                                  while ($rows = mysqli_fetch_array($result3, MYSQLI_ASSOC))
-                                  {$query2="SELECT * FROM `user_work_details` WHERE `work_id`='$rows[work_id]'";
-                                      $run = mysqli_query($conn, $query2);
-                                      $row = mysqli_fetch_array($run, MYSQLI_ASSOC);?>
                 <div class="detail-content">
+                  <?php
+                                    while ($rows = mysqli_fetch_array($result3, MYSQLI_ASSOC))
+                                    {$query2="SELECT * FROM `user_work_details` WHERE `work_id`='$rows[work_id]'";
+                                        $run = mysqli_query($conn, $query2);
+                                        $row = mysqli_fetch_array($run, MYSQLI_ASSOC);?>
                   <div class="timeline-block">
                     <h6><?php echo($row['title']);?><span>&nbsp(<?php $start=$row['start'];
                                                                                            $startdate = explode("-", $start);
@@ -219,20 +206,17 @@ $lastname="Fatima";
             </div>
           </div>
         </div>
-    <footer class="footer" id="footer">
-      <div class="container">
-          <div class="row justify-content-center">
-              <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top:1% ; margin-bottom: 1%;"><a>Copyright<i
-                          class="fa fa-copyright" aria-hidden="true"></i>CV</a></div>
-              <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top:1% ;"><a><i class="fa fa-whatsapp"
-                          aria-hidden="true"></i>&ensp;+92256314548 <br></a></div>
+        <footer class="footer" id="footer">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top:1% ; margin-bottom: 1%;"><a>Copyright<i class="fa fa-copyright" aria-hidden="true"></i>CV</a></div>
+                    <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top:1% ;"><a><i class="fa fa-whatsapp" aria-hidden="true"></i>&ensp;+92256314548 <br></a></div>
 
-              <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top:1% ;"><a><i class="fa fa-envelope-o"
-                          aria-hidden="true"></i>&ensp;CV@gmail.com</a></div>
-              <br>
-          </div>
-      </div>
-  </footer>
+                    <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top:1% ;"><a><i class="fa fa-envelope-o" aria-hidden="true"></i>&ensp;CV@gmail.com</a></div>
+                    <br>
+                </div>
+            </div>
+        </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

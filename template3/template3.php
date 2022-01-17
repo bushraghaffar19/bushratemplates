@@ -1,9 +1,9 @@
 <?php
 include_once 'config.php';
 session_start();
-$firstname="Urooj";
-$lastname="Fatima";
-
+$firstname="Bushra";
+$lastname="Ghaffar";
+$_SESSION['color']="pink";
     ?>
 <!DOCTYPE html>
 <html>
@@ -20,7 +20,7 @@ $lastname="Fatima";
 	<link rel="stylesheet" href="bootstrap-4.6.1-dist/bootstrap-4.6.1-dist/css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 			integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    
+
 	<title>CV Builder</title>
 </head>
 <?php
@@ -29,33 +29,19 @@ $lastname="Fatima";
 ?>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light ">
-          <a class="navbar-brand" href="#"><img class="image" src="images/logo_transparent.png" alt="logo"></a>
+          <a class="navbar-brand" href="#"><img class="image" src="/images/logo_transparent.png" alt="logo"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
               aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
-              <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav mr-auto">
               </ul>
               <span class="navbar-text">
                   <ul class="navbar-nav mr-auto">
                       <li class="nav-item active">
-                          <a class="nav-link" href="#">Home
+                          <a class="nav-link" href="../../index.html">Home
               </span></a>
-              </li>
-              <li class="nav-item active">
-                  <a class="nav-link" href="#">About</span></a>
-              </li>
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Templates
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="#">Template 1</a>
-                      <a class="dropdown-item" href="#">Template 2</a>
-                      <a class="dropdown-item" href="#">Template 3 </a>
-                  </div>
               </li>
               </ul>
               </span>
@@ -65,7 +51,7 @@ $lastname="Fatima";
               <button type="button" class="btn btn-primary" id="pdf" >Your CV is now downloading as PDF</button>
         </div>
                 <div id="doc2" class="yui-t7">
-	                     <div id="inner">
+	                     <div id="inner" style="background-color: <?php echo($_SESSION['color'])?>;">
 
 		                     <div id="hd">
 		                       	<div class="yui-gc">
@@ -82,7 +68,7 @@ $lastname="Fatima";
                             echo(" , ");
                             echo($data['country']);?></h6>
 				                		<h6><?php echo($data['email']); ?></h6>
-				                		<h6><?php 
+				                		<h6><?php
                             echo($data['contact']);?></h6>
 				                 	</div><!--// .contact-info -->
 			                   	</div>
@@ -207,7 +193,7 @@ $lastname="Fatima";
                   echo(" ");
                   echo($data['last_name']);?> &mdash; <?php echo($data['email']); ?> &mdash; <?php
                             echo($data['contact']);?></p>
-      <p><a href="<?php echo($data['github']); ?>">Github </a> &mdash; <a href="<?php echo($data['linkedin']); ?>">LinkedIn</a> </p>
+      <p><?php echo($data['github']); ?> &mdash; <?php echo($data['linkedin']); ?></p>
 		</div><!--// footer -->
 
 	</div><!-- // inner -->
@@ -219,19 +205,16 @@ $lastname="Fatima";
   <button type="download" name="button"></button>
 </div>
 <footer class="footer" id="footer">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top:1% ; margin-bottom: 1%;"><a>Copyright<i
-                            class="fa fa-copyright" aria-hidden="true"></i>CV</a></div>
-                <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top:1% ;"><a><i class="fa fa-whatsapp"
-                            aria-hidden="true"></i>&ensp;+92256314548 <br></a></div>
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top:1% ; margin-bottom: 1%;"><a>Copyright<i class="fa fa-copyright" aria-hidden="true"></i>CV</a></div>
+              <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top:1% ;"><a><i class="fa fa-whatsapp" aria-hidden="true"></i>&ensp;+92256314548 <br></a></div>
 
-                <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top:1% ;"><a><i class="fa fa-envelope-o"
-                            aria-hidden="true"></i>&ensp;CV@gmail.com</a></div>
-                <br>
-            </div>
-        </div>
-    </footer>
+              <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top:1% ;"><a><i class="fa fa-envelope-o" aria-hidden="true"></i>&ensp;CV@gmail.com</a></div>
+              <br>
+          </div>
+      </div>
+  </footer>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>

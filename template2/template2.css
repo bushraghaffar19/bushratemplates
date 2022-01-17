@@ -8,7 +8,6 @@
 	--color-gray-dark-3: #9a9a9a;
 	--color-blue-dark-1: #00387f;
 	--color-tiffany: #00a6a6;
-	--profile-theme: #4682bf;
 	--timeline-circle-theme: #14253e;
 
 	--pgbar-length: 100%;
@@ -106,6 +105,8 @@ body {
 .info-section span {
 	position: relative;
 	transition: all 0.3s;
+	max-width: 15ch;
+  word-break: break-word;
 }
 .info-section i {
 	color: var(--profile-theme);

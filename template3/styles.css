@@ -1,62 +1,28 @@
-body{
-    background-image: url('images/bg.jpeg') !important ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: 'Mochiy Pop P One', sans-serif;
-}
-
+body {
+  background-color: #f7f7ff !important;
+  font-family: "mouse-300", Arial, Helvetica, sans-serif;
+  color: #6A6A6A; }
+  
 .image{
-
-    width: 120px;
-    height:100px;
-    margin-left: 50px;
+    width: 160px;
+    margin-left: 30px;
+    margin-top: -30px;
+    margin-bottom: -30px;
+}
+.navbar{
+    padding:0 1rem !important;
+    margin-bottom: 2rem !important;
+    background-color: #387997;
 }
 .nav-link{
-    color:black !important;
-    font-size: 22px;
+    font-weight:500;
+    font-size: 1.5rem;
     margin-right: 30px;
-    font-weight: bold;
-
 }
-
-.dropdown-menu{
-
-    background-color:#75acc5 !important ;
-    color: white;
-
+.navbar-light .navbar-nav .nav-link {
+    color:white !important;
 }
-
-.dropdown-item{
-    color: rgb(97, 68, 68);
-    font-size: 20px;
-    font-weight: bold !important;
-}
-.dropdown-item:hover{
-    background: color #285569 !important;
-    font-weight: 400;
-    font-size: 18px;
-}
-.heading>h2,h1 {
-    font-family: 'Mochiy Pop P One', sans-serif;
-    text-align: center;
-    font-weight: 300;
-    color:#172f3a ;
-    margin-bottom: 50px;
-    margin-top: 50px;
-}
-
-.card-title{
-    font-family: 'Mochiy Pop P One', sans-serif;
-    font-weight: 700;
-    text-align: center;
-}
-
-.abthead{
-    font-family: 'Mochiy Pop P One', sans-serif;
-    color: #172f3a;
-     font-weight: 400;
-     font-size: 30px;
-}
+.btn{background-color: #24466b !important;}
 .fa-copyright{
     font-size: 20px !important ;
 }

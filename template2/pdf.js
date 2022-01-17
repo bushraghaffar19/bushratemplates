@@ -13,12 +13,12 @@ async function generatepdf(){
     await html2canvas(downloading,{
         allowTaint:true,
         useCORS:true,
-        width:divWidth+100,
+        width:divWidth+150,
         height:divHeight+100
 
     }).then((canvas)=>{
         //canvas convert to png
-        doc.addImage(canvas.toDataURL("image/png"),'PNG',5,30,width+20,height+50);
+        doc.addImage(canvas.toDataURL("image/png"),'PNG',1,35,width+20,height);
 
     })
     doc.save("cv.pdf");
